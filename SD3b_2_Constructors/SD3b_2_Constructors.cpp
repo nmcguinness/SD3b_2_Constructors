@@ -2,6 +2,7 @@
 //
 #include <iostream>
 #include <string>
+#include <list>
 #include "SD3b_2_Constructors.h"
 using namespace std;
 
@@ -37,11 +38,23 @@ void demoSimpleList();
 
 int main()
 {
-	demoSimpleConstructors();
+	//	demoSimpleConstructors();
 	demoSimpleList();
 }
 
 void demoSimpleList() {
+	//make the list
+	list<Point2D> pList;
+
+	//make the points
+	Point2D p1(50, 100);
+	Point2D p2(640, 480);
+	Point2D p3(1920, 1080);
+
+	//add the points
+	pList.push_back(p1);
+	pList.push_back(p2);
+	pList.push_back(p3);
 }
 
 void demoSimpleConstructors() {
