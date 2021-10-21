@@ -25,4 +25,10 @@ public:
 
 int main()
 {
+	Point2D p1(50, 100);
+	Point2D p2(640, 480);
+	Point2D p3(1920, 1080);
+
+	//cout << p1 << endl; //<< operator isnt clever enough to stringify i.e. to call toString
+	cout << p1.toString() << endl;
 }
