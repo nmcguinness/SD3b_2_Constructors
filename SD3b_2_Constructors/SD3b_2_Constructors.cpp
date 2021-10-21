@@ -2,6 +2,7 @@
 //
 #include <iostream>
 #include <string>
+#include "SD3b_2_Constructors.h"
 using namespace std;
 
 class Point2D {
@@ -9,11 +10,19 @@ private:
 	int x, y;
 
 public:
+	//constructor
 	Point2D(int x, int y) : x(x), y(y) {
-		cout << "constructing..." << endl;
+		cout << "constructor..." << endl;
 	}
+	//copy constructor
+	Point2D(const Point2D& other) {
+		cout << "copy constructor..." << endl;
+		this->x = other.getX();
+		this->y = other.getY();
+	}
+
 	~Point2D() {
-		cout << "destructing..." << endl;
+		cout << "destructor..." << endl;
 	}
 
 #pragma region Get/Set & toString
@@ -23,12 +32,21 @@ public:
 #pragma endregion
 };
 
+void demoSimpleConstructors();
+
 int main()
 {
-	Point2D p1(50, 100);
-	Point2D p2(640, 480);
-	Point2D p3(1920, 1080);
+	demoSimpleConstructors();
+}
 
-	//cout << p1 << endl; //<< operator isnt clever enough to stringify i.e. to call toString
-	cout << p1.toString() << endl;
+void demoSimpleConstructors() {
+	Point2D p1(50, 100);
+	//Point2D p2(640, 480);
+	//Point2D p3(1920, 1080);
+
+	////cout << p1 << endl; //<< operator isnt clever enough to stringify i.e. to call toString
+	//cout << p1.toString() << endl;
+
+	//demo for copy constructor
+	Point2D p4(p1); //make a DISTINCT copy of p1
 }
