@@ -33,10 +33,15 @@ public:
 };
 
 void demoSimpleConstructors();
+void demoSimpleList();
 
 int main()
 {
 	demoSimpleConstructors();
+	demoSimpleList();
+}
+
+void demoSimpleList() {
 }
 
 void demoSimpleConstructors() {
