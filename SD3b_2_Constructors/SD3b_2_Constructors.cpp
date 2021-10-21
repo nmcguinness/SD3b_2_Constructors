@@ -35,11 +35,17 @@ public:
 
 void demoSimpleConstructors();
 void demoSimpleList();
+void demoPointerList();
+void demoReferenceList();
+void demoEmplaceList();
 
 int main()
 {
-	//	demoSimpleConstructors();
-	demoSimpleList();
+	//demoSimpleConstructors();
+	//demoSimpleList();
+	//demoPointerList();
+	//demoReferenceList();
+	demoEmplaceList();
 }
 
 void demoSimpleList() {
@@ -55,6 +61,53 @@ void demoSimpleList() {
 	pList.push_back(p1);
 	pList.push_back(p2);
 	pList.push_back(p3);
+}
+
+void demoPointerList() {
+	//make the list
+	list<Point2D*> pList;
+
+	//make the points
+	Point2D p1(50, 100);
+	Point2D p2(640, 480);
+	Point2D p3(1920, 1080);
+
+	//Point2D* pp1 = &p1;
+
+	//add the points
+	pList.push_back(&p1); //use & to get address and there's your pointer!
+	pList.push_back(&p2);
+	pList.push_back(&p3);
+}
+
+void demoReferenceList() {
+	////make the list
+	//list<Point2D&> pList;
+
+	////make the points
+	//Point2D p1(50, 100);
+	//Point2D p2(640, 480);
+	//Point2D p3(1920, 1080);
+
+	////add the points
+	//pList.push_back(p1); //use & to get address and there's your pointer!
+	//pList.push_back(p2);
+	//pList.push_back(p3);
+}
+
+void demoEmplaceList() {
+	//make the list
+	list<Point2D> pList;
+
+	//make the points
+	//Point2D p1(50, 100);
+	//Point2D p2(640, 480);
+	//Point2D p3(1920, 1080);
+
+	//add the points
+	pList.emplace_back(50, 100);
+	pList.emplace_back(640, 480);
+	pList.emplace_back(1920, 1080);
 }
 
 void demoSimpleConstructors() {
